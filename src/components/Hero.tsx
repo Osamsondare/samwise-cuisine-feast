@@ -51,6 +51,19 @@ const Hero: React.FC = () => {
     }
   };
 
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.7,
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section 
       id="home" 
@@ -71,6 +84,18 @@ const Hero: React.FC = () => {
       >
         <motion.div variants={itemVariants} className="mb-2 text-nigeria-gold">
           <span className="inline-block text-lg md:text-xl border-b-2 border-nigeria-gold pb-1">Welcome to</span>
+        </motion.div>
+        
+        {/* Nigerian delicacies image */}
+        <motion.div 
+          variants={imageVariants}
+          className="w-full max-w-xs mx-auto mb-4"
+        >
+          <img 
+            src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+            alt="Nigerian Delicacies" 
+            className="w-full h-auto rounded-lg shadow-lg"
+          />
         </motion.div>
         
         <motion.h1 
