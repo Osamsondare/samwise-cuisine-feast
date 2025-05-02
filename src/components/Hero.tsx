@@ -51,19 +51,6 @@ const Hero: React.FC = () => {
     }
   };
 
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delay: 0.7,
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  };
-
   return (
     <section 
       id="home" 
@@ -86,16 +73,19 @@ const Hero: React.FC = () => {
           <span className="inline-block text-lg md:text-xl border-b-2 border-nigeria-gold pb-1">Welcome to</span>
         </motion.div>
         
-        {/* Nigerian delicacies image */}
-        <motion.div 
-          variants={imageVariants}
-          className="w-full max-w-xs mx-auto mb-4"
+        <motion.div
+          variants={itemVariants}
+          className="w-full max-w-md mx-auto mb-8 rounded-lg overflow-hidden shadow-2xl" 
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1628626135933-8e1d2746d3b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            height: '200px'
+          }}
         >
-          <img 
-            src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-            alt="Nigerian Delicacies" 
-            className="w-full h-auto rounded-lg shadow-lg"
-          />
+          <div className="w-full h-full flex items-end justify-center bg-gradient-to-t from-black/70 to-transparent">
+            <p className="text-white text-sm md:text-base p-3">Pounded Yam and Egusi Soup</p>
+          </div>
         </motion.div>
         
         <motion.h1 
